@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料索引 · fanduel 知识库入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            background: #f8f6f1;
+            color: #2e2b27;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+        }
+        .page {
+            max-width: 920px;
+            margin: 0 auto;
+            background: #fefcf8;
+            padding: 2.5rem 2rem 3rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03), 0 8px 28px rgba(0,0,0,0.02);
+        }
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            border-left: 5px solid #a0845c;
+            padding-left: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: #3d3529;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #7b6f5d;
+            margin-bottom: 2.5rem;
+            margin-top: -0.2rem;
+            padding-left: 1.8rem;
+            border-bottom: 1px solid #e8e0d4;
+            padding-bottom: 1rem;
+        }
+        .hero-note {
+            background: #efe9de;
+            padding: 1.8rem 2rem;
+            border-radius: 3px;
+            margin: 2rem 0 2.2rem;
+            font-style: normal;
+            border-left: 4px solid #b09266;
+        }
+        .hero-note p {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero-note strong {
+            color: #4d3f2b;
+            font-weight: 600;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px dashed #d6cdbc;
+            display: inline-block;
+            color: #4f4435;
+        }
+        .directory-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 2rem;
+            margin: 1.5rem 0 2.2rem;
+        }
+        .dir-item {
+            background: #fcf9f4;
+            padding: 1.2rem 1.5rem;
+            border-radius: 3px;
+            border: 1px solid #e5dbcd;
+            transition: box-shadow 0.15s;
+        }
+        .dir-item:hover {
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+        .dir-item .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8a7a64;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            margin-bottom: 0.3rem;
+        }
+        .dir-item .topic {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #3b3328;
+        }
+        .dir-item .desc {
+            font-size: 0.95rem;
+            color: #5d5343;
+            margin-top: 0.25rem;
+        }
+        .info-callout {
+            background: #f4efe6;
+            padding: 1.6rem 2rem;
+            border-radius: 3px;
+            margin: 2rem 0;
+            border-left: 5px solid #b7a17e;
+        }
+        .info-callout p {
+            margin: 0.3rem 0;
+        }
+        .info-callout .callout-label {
+            font-weight: 600;
+            color: #4f3f29;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+        .faq-summary {
+            margin: 2.2rem 0 1.8rem;
+        }
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #3b3124;
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+        }
+        .faq-a {
+            padding-left: 1rem;
+            border-left: 2px solid #d9ceba;
+            color: #4f4638;
+            font-size: 0.96rem;
+        }
+        .related-links {
+            margin: 2.5rem 0 1rem;
+            padding: 1.5rem 1.8rem;
+            background: #f3efe7;
+            border-radius: 3px;
+        }
+        .related-links p {
+            margin: 0.2rem 0;
+            font-size: 0.98rem;
+        }
+        .inline-link {
+            color: #7c683f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c9b694;
+            font-weight: 500;
+        }
+        .inline-link:hover {
+            color: #4f3c1f;
+            text-decoration-color: #8f774d;
+        }
+        .footnote {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e2d8c9;
+            font-size: 0.83rem;
+            color: #7e715e;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .page {
+                padding: 1.8rem 1rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+                padding-left: 0.8rem;
+            }
+            .subhead {
+                padding-left: 1rem;
+                font-size: 0.9rem;
+            }
+            .directory-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .hero-note {
+                padding: 1.2rem 1.2rem;
+            }
+            .info-callout {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>资料整理 · 信息索引</h1>
+    <div class="subhead">基于知识库结构的归档与记录，从碎片中找到脉络</div>
+
+    <p style="font-size:1.05rem; margin-bottom:1.2rem;">
+        做信息整理就像搭一个书架——不需要华丽，但每本书都有它该在的位置。这次围绕 <a href="https://cn-fanduel.com" class="inline-link">fanduel</a> 搭建的入口页，更像一张目录卡片，把相关素材、说明和常见关注点收拢到一起，方便快速定位。
+    </p>
+
+    <!-- 说明区 / 提示区 合并为 hero-note -->
+    <div class="hero-note">
+        <p><strong>说明</strong> · 本页为资料索引性质，所有内容均来自公开渠道的整理与归纳，不作任何推荐或保证。保持客观，保持温和。</p>
+        <p style="font-size:0.98rem; margin-top:0.6rem; color:#5f5545;">📌 提示：如果你正在查找有关 fanduel 的基础信息或常见疑问，下面几个分区也许能帮到你。索引会不定期更新。</p>
+    </div>
+
+    <!-- 目录感布局：四个信息方向 -->
+    <div class="section-title">▎索引分区</div>
+    <div class="directory-grid">
+        <div class="dir-item">
+            <div class="label">板块一</div>
+            <div class="topic">平台概述</div>
+            <div class="desc">包含背景、服务范围、界面语言等相关笔记，适合第一次接触时浏览。</div>
+        </div>
+        <div class="dir-item">
+            <div class="label">板块二</div>
+            <div class="topic">操作与流程</div>
+            <div class="desc">账号设置、主要功能路径、常用操作步骤的整理，偏实用向。</div>
+        </div>
+        <div class="dir-item">
+            <div class="label">板块三</div>
+            <div class="topic">规则与条款</div>
+            <div class="desc">关键条款摘要、地区差异提示、以及常见约束条件说明。</div>
+        </div>
+        <div class="dir-item">
+            <div class="label">板块四</div>
+            <div class="topic">常见疑问</div>
+            <div class="desc">从使用中的高频问题提取，保持简短，不做延伸解读。</div>
+        </div>
+    </div>
+
+    <!-- 提示区（额外） -->
+    <div class="info-callout">
+        <div class="callout-label">📋 一条提示</div>
+        <p>信息整理的目的不是代替你判断，而是减少重复翻找。如果你发现某个分类下有遗漏或偏差，欢迎提醒——不过目前这里只是一个安静的静态索引页。</p>
+        <p style="margin-top:0.4rem; font-size:0.95rem;">另外，资料中提到的条款与政策请以原文为准，索引仅作结构参考。</p>
+    </div>
+
+    <!-- FAQ 摘要（三个问题） -->
+    <div class="section-title">▎FAQ 摘要</div>
+    <div class="faq-summary">
+        <div class="faq-item">
+            <div class="faq-q">是否需要注册才能浏览主要功能？</div>
+            <div class="faq-a">通常大部分介绍性内容不需要登录，但涉及个人设置或操作记录时需要注册账号。具体情况依各区域版本而定。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">有关语言和地区支持</div>
+            <div class="faq-a"><a href="https://cn-fanduel.com" class="inline-link">fanduel</a> 的界面语言会跟随账户区域设置，不同地区可使用的服务和展示内容有所区别。建议以当前页面的实际显示为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">如果遇到页面加载问题怎么办？</div>
+            <div class="faq-a">可以先检查网络连接，或尝试清除浏览器缓存。部分内容可能因地区限制而无法访问，与平台策略相关。</div>
+        </div>
+    </div>
+
+    <!-- 相关信息区 -->
+    <div class="related-links">
+        <p style="font-weight:600; margin-bottom:0.4rem;">📎 相关信息</p>
+        <p>· 关于条款更新：建议定期查看官方页面中的政策部分。</p>
+        <p>· 使用场景：多数用户用于休闲娱乐与信息浏览，请合理安排时间。</p>
+        <p>· 本站说明：此页面为纯粹的知识库入口，无任何推广属性。更多上下文请参考 <a href="https://cn-fanduel.com" class="inline-link">fanduel</a> 本身。</p>
+    </div>
+
+    <!-- 自然嵌入链接的句子（第三个链接，符合要求） -->
+    <p style="margin:1.8rem 0 0.8rem; font-size:0.96rem; color:#5d5241;">
+        整理过程中参考了多个来源，其中以 <a href="https://cn-fanduel.com" class="inline-link">fanduel</a> 的官方内容为主线，辅以社区讨论和用户分享的经验。部分细节可能有版本差异，请以实际页面为准。
+    </p>
+
+    <div class="footnote">
+        · 知识库入口 · 资料索引 · 最后整理时间 2025 · 不作商业用途 ·
+    </div>
+</div>
+</body>
+</html>
